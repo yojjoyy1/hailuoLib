@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "hailuoLib"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.4"
   spec.summary      = "A short description of hailuoLib."
 
   # This description is used to generate tags and improve search results.
@@ -72,6 +72,15 @@ Pod::Spec.new do |spec|
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
+  spec.xcconfig = {'OTHER_LDFLAGS' => '-ObjC',
+          'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+          'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(SRCROOT)',
+          'HEADER_SEARCH_PATHS' =>'$(inherited)     $(SDKROOT)/usr/include/libxml2 $(SRCROOT)',
+          'ARCHS' => '$(inherited)',
+          'VALID_ARCHS' =>'$(inherited)'}
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +100,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #spec.source_files  = "hailuoLib", "hailuoLib/**/*"
+  #spec.source_files = 'hailuoLib/Classes/**/*.{h,m,swift}'
+  #spec.requires_arc = true
   #spec.exclude_files = "hailuoLib/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
