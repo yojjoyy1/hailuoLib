@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "hailuoLib"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "A short description of hailuoLib."
 
   # This description is used to generate tags and improve search results.
@@ -116,7 +116,7 @@ Pod::Spec.new do |spec|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-   spec.vendored_libraries = "hailuoTest.framework"
+   spec.vendored_libraries = "*/hailuoTest.framework"
   #spec.framework  = "hailuoTest.framework"
    spec.frameworks = 'UIKit','AVFoundation','Foundation'
 
