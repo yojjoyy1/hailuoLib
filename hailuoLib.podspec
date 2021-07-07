@@ -116,7 +116,7 @@ Pod::Spec.new do |spec|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-   spec.vendored_libraries = "*/hailuoTest.framework"
+   spec.vendored_libraries = "hailuoTest.framework"
   #spec.framework  = "hailuoTest.framework"
    spec.frameworks = 'UIKit','AVFoundation','Foundation'
 
